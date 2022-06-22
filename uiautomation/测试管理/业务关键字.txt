@@ -1,0 +1,7 @@
+*** Keywords ***
+登录
+
+ifs
+    [Arguments]    ${grade}
+    Run Keyword If    ${grade}>=30    Log    不及格但一般差
+    ...    ELSE    log    超级差
