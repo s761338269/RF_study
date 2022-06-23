@@ -64,13 +64,37 @@ Library           Collections
     ...    ELSE    ifs    ${grade}
     Comment    循环结构
     FOR    ${a}    IN    声哥    女娲    沈梦溪
-    log    ${a}
+        log    ${a}
     END
     @{list}    Create List    声哥    女娲    沈梦溪
     FOR    ${a}    IN    @{list}
-    log    ${a}
+        log    ${a}
     END
     FOR    ${a}    IN RANGE    1    11
-    Run Keyword If    ${a}==8    Exit For Loop
-    log    ${a}
+        Run Keyword If    ${a}==8    Exit For Loop
+        log    ${a}
     END
+
+元素定位
+    打开浏览器
+    Comment    Input text    id=kw    大内密探
+    Comment    Input text    name=wd    大内密探
+    Comment    Click Link    link=新闻
+    Comment    Input text    css=form#form>span>input    大内密探
+    Comment    Input text    //form[@id='form']/span/input    大内密探
+    Comment    定位动态元素
+    Comment    Input text    xpath=//input[starts-with(@autocomplete, 'of')]    大内密探
+    Comment    sleep    2
+    Comment    Click Element    id=su
+    Comment    log    搜索成功
+    Comment    Open Browser    https://kyfw.12306.cn/otn/leftTicket/init?linktypeid=dc    ff
+    Comment    sleep    2
+    Comment    将不可编辑移除
+    Comment    Execute Javascript    $('#back_train_date').removeAttr('disabled')
+    Comment    Input text    id=back_train_date    2022-6-29
+    Comment    Mouse Over    id=s-usersetting-top
+    Comment    sleep    2
+    Comment    Click link    link=搜索设置
+    Input text    id=kw    百度贴吧
+    Click Element    id=su
+    Click Element    //div[@id="2"]/div/h3/a/em

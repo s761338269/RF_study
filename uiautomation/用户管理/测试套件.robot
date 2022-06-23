@@ -2,18 +2,6 @@
 Library           Selenium2Library
 
 *** Test Cases ***
-id定位实战
-    Open Browser    https://baidu.com    chrome
-    Set Browser Implicit Wait    5
-    Sleep    3
-    Set Window Size    1150    700
-    sleep    2
-    Maximize Browser Window
-    Sleep    3
-    Go Back
-    sleep    2
-    Go To    https://baidu.com
-
 浏览器关键字
     Open Browser    https://www.baidu.com    chrome
     Set Browser Implicit Wait    5
@@ -36,7 +24,7 @@ id定位实战
     Comment    Input Text    id =kw    X8沙箱
     Comment    sleep    3
     Comment    单击元素
-    Click Element     link=hao123
+    Click Element    link=hao123
     Comment    Input Text    id =kw    X8沙箱
     Comment    sleep    3
     Comment    清除元素文本

@@ -1,3 +1,6 @@
+*** Settings ***
+Library           Selenium2Library
+
 *** Keywords ***
 登录
 
@@ -5,3 +8,10 @@ ifs
     [Arguments]    ${grade}
     Run Keyword If    ${grade}>=30    Log    不及格但一般差
     ...    ELSE    log    超级差
+
+打开浏览器
+    Open Browser    https://www.baidu.com    ff
+    Set Browser Implicit Wait    3
+
+关闭浏览器
+    Close Browser
