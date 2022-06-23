@@ -1,0 +1,13 @@
+*** Settings ***
+Library           Selenium2Library
+
+*** Keywords ***
+打开浏览器
+    Open Browser    https://passport2.chaoxing.com/login?fid=&newversion=true&refer=https%3A%2F%2Fi.chaoxing.com    ff
+    Set Browser Implicit Wait     5
+
+关闭浏览器
+    Close Browser
+
+隐式等待
+    Set Browser Implicit Wait    5

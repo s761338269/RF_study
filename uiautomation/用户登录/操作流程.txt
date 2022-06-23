@@ -1,0 +1,10 @@
+*** Settings ***
+Library           Selenium2Library
+Resource          定义操作界面.txt
+Resource          登录业务操作.txt
+
+*** Keywords ***
+登录主流程
+    [Arguments]    ${url}    ${username}    ${password}
+    登录：打开测试页面    ${url}
+    登录界面    ${username}    ${password}

@@ -1,0 +1,14 @@
+*** Settings ***
+Resource          登录业务操作.txt
+Library           Selenium2Library
+
+*** Keywords ***
+登录界面
+    [Arguments]    ${username}    ${password}
+    登录：输入账号    ${username}
+    登录：输入密码    ${password}
+    登录：点击登录
+
+检测登录状态
+    [Arguments]    ${result}
+    登录：验证登录成功    ${result}

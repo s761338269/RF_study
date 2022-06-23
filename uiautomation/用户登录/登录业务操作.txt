@@ -1,0 +1,20 @@
+*** Keywords ***
+登录：输入账号
+    [Arguments]    ${username}
+    Input Text    id=phone    ${username}
+
+登录：输入密码
+    [Arguments]    ${password}
+    Input Text    id=pwd    ${password}
+
+登录：点击登录
+    Click Element    id=loginBtn
+
+登录：验证登录成功
+    [Arguments]    ${result}
+    Page Should Contain    ${result}
+
+登录：打开测试页面
+    [Arguments]    ${url}
+    Open Browser    ${url}    ff
+    sleep    2
